@@ -1,0 +1,39 @@
+@use "sass:meta";
+
+// VARIABLES-SASS
+$primaryColor: #FFDF2B;
+$secondaryColor: #0C8A64;
+$thirdColor: #FDAB93;
+$fourthColor: #FFDCD8;
+
+$font-primary: "Urbanist", sans-serif;
+$font-secondary: "Playfair Display", serif;
+
+
+//MIXIN-SASS
+@mixin bodyStyle  {
+    background-color: $primaryColor;
+}
+
+@mixin styleFontwithStroke ($color, $stroke) {
+    // font-family: $font-primary;
+    color: $color;
+    -webkit-text-stroke: $stroke 1px;
+}
+
+@mixin displayFlexColumnDirection {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin displayFlexRowDirection {
+    display: flex;
+    flex-direction: row;
+}
+
+.responsive-icon {
+    width: clamp(5em, 10vw, 9rem);
+    height: clamp(5em, 10vw, 9rem);
+}
+
+

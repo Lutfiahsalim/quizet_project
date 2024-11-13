@@ -1,0 +1,307 @@
+@import './variables.scss';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    @include bodyStyle;
+    margin: 0;
+}
+
+// default size Large devices such as laptops, computers (greater than 1024px)
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+    .navbar-title {
+        font-family: $font-primary;
+        color: $secondaryColor;
+        font-size: 5em;
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        margin: 0;
+    }
+    .nav-child {
+        margin-right: 100% - 90%;
+    }
+    ul {
+        display: flex;
+    }
+    li {
+        list-style-type: none;
+        padding: 1% 30%;
+    }
+    a {
+        @include styleFontwithStroke ($thirdColor, $secondaryColor);
+        font-size: 1.2em;
+        font-weight: 700;
+        font-style: $font-primary;
+        color: $thirdColor;
+        -webkit-text-stroke: $secondaryColor 1px;
+        text-decoration: none;
+    }
+}
+
+.content {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: $fourthColor;
+    border-radius: 3em;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 4em 3em 4em 3em;
+    .quiz-name {
+        font-family: $font-primary;
+        font-size: 70px;
+        color: $primaryColor;
+        -webkit-text-stroke: $secondaryColor 2px;
+        margin: 0;
+        text-align: left;
+    }
+    .quiz-description {
+        font-family: $font-secondary;
+        font-size: 20px;
+        font-weight: 600;
+        color: $secondaryColor;
+        text-align: left;
+        padding-left: 0;
+    }
+    .icon-wrap {
+        position: absolute;
+        top: 15px;
+        left: 50%;
+        transform: translateX(80%);
+        // z-index: -1;
+
+        img {
+            width: 25vw;
+            height: auto;
+        }
+    }
+
+    button {
+        background-color: $thirdColor;
+        border: $secondaryColor 2em;
+        padding: 1.2% 4%;
+        margin: 3% 4%;
+        font-family: $font-primary;
+        font-size: 1.8em;
+        font-weight: 900;
+        color: $secondaryColor;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+}
+
+#about-section {
+    background-color: $fourthColor;
+    width: 100%;
+    @include displayFlexColumnDirection;
+    margin-top: 16em;
+    .desc-top {
+        @include displayFlexRowDirection;
+        padding: 3em 3em 0 3em;
+        .desc-left {
+            font-family: $font-primary;
+            color: $secondaryColor;
+            font-size: 3.75em;
+            width: 40%;
+        }
+        img {
+            width: 17vw;
+            height: 15vw;
+        }
+    }
+    .desc-bottom {
+        @include displayFlexColumnDirection;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+        align-items: end;
+        h3 {
+            font-family: $font-primary;
+            color: $primaryColor;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            font-size: 1.8em;
+            padding-right: 2em;
+            margin: 0;
+        }
+        img {
+            max-width: 80vw;
+            padding-left: 2%;
+        }
+    }
+}
+
+footer {
+    font-family: $font-primary;
+    color: $secondaryColor;
+    text-align: end;
+    font-size: 15px;
+    margin-top: auto;
+    margin-right: 1em;
+    bottom: 0;
+}
+
+/* Medium devices such as tablets (1024px or lesser) */
+@media only screen and (max-width: 1024px) {
+body {
+    margin: 0;
+}
+
+.navbar {
+    .navbar-title {
+        font-size: 3em;
+        letter-spacing: -0.05em;
+    }
+    .nav-child {
+        margin-right: 100% - 85%;
+    }
+    a {
+        font-size: 1em;
+        font-weight: 600;
+    }
+}
+
+.container {
+    margin-top: 7%;
+    .icon-wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateX(56%);
+        img {
+            width: 27vw;
+            height: auto;
+        }
+    }
+}
+
+#about-section {
+    margin-top: 10em;
+    .desc-top {
+        padding: 3em 3em 0 3em;
+        .desc-left {
+            font-size: 2.75em;
+            width: 40%;
+        }
+        img {
+            width: 17vw;
+            height: 15vw;
+        }
+    }
+    .desc-bottom {
+        h3 {
+            font-size: 1.5em;
+            padding-right: 2em;
+            margin: 0;
+        }
+        img {
+            max-width: 80vw;
+            padding-left: 2%;
+        }
+    }
+} 
+
+footer {
+    font-size: 10px;
+}
+}
+
+/* Small devices such as phones (768px or lesser) */
+@media only screen and (max-width: 768px) {
+html, body {
+    scroll-behavior: smooth;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.navbar {
+    margin-top: 20%;
+    flex-direction: column-reverse;
+    .navbar-title {
+        font-size: 5em;
+        text-align: center;
+        
+    }
+    .nav-child {
+        text-align: center;
+        margin-right: none;
+    }
+    ul {
+        justify-content: space-around;
+    }
+    li {
+        padding: 0% 10%;
+    }
+    a {
+        // @include styleFontwithStroke ($thirdColor, $secondaryColor);
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+}
+.container {
+    border-radius: 0;
+    margin-top: 30%;
+    .quiz-name {
+        display: none;
+    }
+    .quiz-description {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $secondaryColor;
+        text-align: center;
+        padding-left: 0;
+    }
+    .icon-wrap {
+        position: absolute;
+        top: -24%;
+        transform: translateX(-50%);
+        img {
+            width: 40vw;
+            height: auto;
+        }
+    }
+
+    button {
+        padding: 3.2% 7%;
+    }
+}
+
+#about-section {
+    .desc-top {
+        padding: 3em 2em 4em 2em;
+        width: 100%;
+        .desc-left {
+            font-size: 2.25em;
+            width: 54%;
+        }
+        img {
+            width: 30vw;
+            height: 25vw;
+        }
+    }
+    .desc-bottom {
+        align-items: center;
+        h3 {
+            font-size: 2em;
+            padding: 0 1em;
+            text-align: end;
+
+
+        }
+        img {
+            max-width: 100vw;
+            padding-left: 2%;
+        }
+    }
+}
+
+
+}

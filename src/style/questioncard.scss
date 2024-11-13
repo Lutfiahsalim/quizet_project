@@ -1,0 +1,26 @@
+@import './variables.scss';
+@import './styles.scss';
+
+body {
+    margin: 0;
+}
+
+.questionCard {
+    .number {
+
+    }
+    .question {
+        width: 50%;
+        margin: 0 25vw;
+        padding: 4em 5em;
+        background-color: $secondaryColor;
+        text-align: start;
+        color: $fourthColor;
+        font-family: $font-secondary;
+        font-size: 1.2em;
+        border-radius: 2em;
+        text-align: center;
+    }
+
+} 
+

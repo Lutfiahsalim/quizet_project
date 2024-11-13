@@ -1,4 +1,6 @@
 import React from "react";
+import "../style/questioncard.scss";
+
 // Types
 import { AnswerObject } from "../App";
 // Styles
@@ -20,27 +22,39 @@ const QuestionCard: React.FC<Props> = ({
   questionNr,
   totalQuestions,
   callback,
-}) => (
-  <div>
-    <p className="number">
-      Question: {questionNr} / {totalQuestions}
-    </p>
-    <p dangerouslySetInnerHTML={{ __html: question }} />
-
-    <div>
-      {answers.map((answer, i) => (
-        <div key={i}>
-          <button
-            disabled={userAnswer ? true : false}
-            value={answer}
-            onClick={callback}
-          >
-            <span dangerouslySetInnerHTML={{ __html: answer }} />
-          </button>
+}) => {
+  return (
+    <div className="questionCard">
+      <div className="section-qs">
+        <div className="describe-fetch">
+          <p>Category: </p>
+          <p>Difficulty: </p>
         </div>
-      ))}
+        <div className="number">
+          <p>
+            Question: {questionNr} / {totalQuestions}
+          </p>
+        </div>
+        <div className="question">
+          <p dangerouslySetInnerHTML={{ __html: question }} />
+        </div>
+      </div>
+
+      <div className="choice-wrap">
+        {answers.map((answer, i) => (
+          <div key={i}>
+            <button
+              disabled={userAnswer ? true : false}
+              value={answer}
+              onClick={callback}
+            >
+              <span dangerouslySetInnerHTML={{ __html: answer }} />
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default QuestionCard;
